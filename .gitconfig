@@ -2,10 +2,18 @@
 	name = tnakata
 	email = f.seasons017@gmail.com
 [alias]
-	b = branch
-	ch = checkout
 	s = status
+	sl = stash list
+	ss = stash save
+	sp = stash pop
+	b = branch
+	bm = branch --merged
+	bd = branch -d
 	a = add -A
-	c = commit
+	c = commit -m
+	ch = checkout
+	l = log -p --decorate
+	d = diff
+	r = reset
 [color]
 	ui = true
