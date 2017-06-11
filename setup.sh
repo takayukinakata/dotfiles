@@ -1,6 +1,8 @@
 #!/bin/bash
 
-ln -s $HOME/dotfiles/.bash_profile ~/.bash_profile
-ln -s $HOME/dotfiles/.bashrc ~/.bashrc
-ln -s $HOME/dotfiles/.gitconfig ~/.gitconfig
-ln -s $HOME/dotfiles/.git-completion.bash ~/.git-completion.bash
+DOT_FILES=(.bash_profile .bashrc .gitconfig .git-completion.bash)
+
+for file in ${DOT_FILES[@]}
+do
+  ln -sf $HOME/dotfiles/$file $HOME/$file
+done
