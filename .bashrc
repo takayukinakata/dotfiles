@@ -1,5 +1,8 @@
-# l
+# ls
 alias ll='ls -lahG'
+
+# grep
+alias grep='grep --color=auto'
 
 # git
 alias g='git'
