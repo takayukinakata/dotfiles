@@ -1,5 +1,5 @@
 # l
-alias ll='ls -lah'
+alias ll='ls -lahG'
 
 # git
 alias g='git'
