@@ -1,5 +1,5 @@
 export PATH="$HOME/.rbenv/bin:$PATH"
-export PS1="\W t-nakata$ "
+export PS1="\W tnakata$ "
 export LSCOLORS=gxfxcxdxbxegedabagacad # default: exfxcxdxbxegedabagacad
 
 source ~/.git-completion.bash
