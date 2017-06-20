@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOT_FILES=(.bash_profile .bashrc .gitconfig .git-completion.bash)
+DOT_FILES=(.bash_profile .bashrc .gitconfig .git-completion.bash .tmux.conf)
 
 for file in ${DOT_FILES[@]}
 do
