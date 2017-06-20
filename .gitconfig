@@ -13,8 +13,9 @@
 	c = commit -m
 	ch = checkout
 	l = log -p --decorate
+	lo = log --oneline --graph --decorate
 	d = diff
 	r = reset
-	fpr = "!f(){ git fetch origin pull/$1/head:$2; }; f"
+	fpr = "!f(){ git fetch origin pull/$1/head:$2; git checkout $2; }; f"
 [color]
 	ui = true
