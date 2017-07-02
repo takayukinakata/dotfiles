@@ -7,11 +7,16 @@
 ; Not make backup file
 (setq make-backup-files nil)
 
+; Not make save file
+(setq auto-save-default nil)
+(setq auto-save-list-file-prefix nil)
+
 ;;; add other package list
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
