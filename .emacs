@@ -1,3 +1,6 @@
+; keybind C-h to dlete
+(keyboard-translate ?\C-h ?\C-?)
+
 ; Highlight parenthesis
 (show-paren-mode t)
 
