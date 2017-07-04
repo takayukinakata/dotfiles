@@ -38,7 +38,8 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-
+; set `bs-show` to default buffer list
+(global-set-key (kbd "C-x C-b") 'bs-show)
 ;/ keybind C-h to dlete
 (keyboard-translate ?\C-h ?\C-?)
 
