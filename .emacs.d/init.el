@@ -49,6 +49,9 @@
 ; Not make backup file
 (setq make-backup-files nil)
 
+;;; Don't make auto-save-list
+(setq auto-save-list-file-prefix nil)
+
 ;;; Don't inset magic comment in ruby-mode
 (setq ruby-insert-encoding-magic-comment nil)
 
