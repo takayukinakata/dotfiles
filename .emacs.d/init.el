@@ -66,7 +66,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (git-gutter+ ruby-test-mode))))
+ '(package-selected-packages (quote (recentf-ext git-gutter+ ruby-test-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -80,3 +80,11 @@
 (require 'git-gutter+)
 (global-git-gutter+-mode t)
 
+;;; set recentf-ext
+;; 最近のファイル500個を保存する
+(setq recentf-max-saved-items 500)
+;; 最近使ったファイルに加えないファイルを
+;; 正規表現で指定する
+(setq recentf-exclude
+      '("/TAGS$" "/var/tmp/"))
+(require 'recentf-ext)
