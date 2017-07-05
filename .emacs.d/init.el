@@ -49,9 +49,9 @@
 ; Not make backup file
 (setq make-backup-files nil)
 
-; Not make save file
-(setq auto-save-default nil)
-(setq auto-save-list-file-prefix nil)
+;;; set git-gutter+
+(require 'git-gutter+)
+(global-git-gutter+-mode t)
 
 ;;; add other package list
 (require 'package)
@@ -64,7 +64,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (ruby-test-mode))))
+ '(package-selected-packages (quote (git-gutter+ ruby-test-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
