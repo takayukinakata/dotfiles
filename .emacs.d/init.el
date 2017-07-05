@@ -49,9 +49,8 @@
 ; Not make backup file
 (setq make-backup-files nil)
 
-;;; set git-gutter+
-(require 'git-gutter+)
-(global-git-gutter+-mode t)
+;;; Don't inset magic comment in ruby-mode
+(setq ruby-insert-encoding-magic-comment nil)
 
 ;;; add other package list
 (require 'package)
@@ -71,3 +70,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;;; Must write installed packages below!!!
+
+;;; set git-gutter+
+(require 'git-gutter+)
+(global-git-gutter+-mode t)
+
