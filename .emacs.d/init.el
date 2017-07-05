@@ -88,3 +88,5 @@
 (setq recentf-exclude
       '("/TAGS$" "/var/tmp/"))
 (require 'recentf-ext)
+;; キーバインド
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
