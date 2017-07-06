@@ -73,7 +73,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (flycheck yasnippet helm-ls-git helm-git-grep helm recentf-ext git-gutter+ ruby-test-mode))))
+    (company flycheck yasnippet helm-ls-git helm-git-grep helm recentf-ext git-gutter+ ruby-test-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -83,6 +83,12 @@
 
 ;;; Must write installed packages below!!!
 
+;;; set company
+(require 'company)
+(global-company-mode)
+(setq company-idle-delay 0) ; デフォルトは0.5
+(setq company-minimum-prefix-length 2)
+(setq company-selection-wrap-around t) ; 候補の一番下でさらに下に行こうとすると一番上に戻る
 ;;; set git-gutter+
 (require 'git-gutter+)
 (global-git-gutter+-mode t)
