@@ -85,7 +85,7 @@
 ;;; set yasnippet
 (require 'yasnippet)
 (yas-global-mode 1)
-f
+
 ;;; set recentf-ext
 ;; 最近のファイル500個を保存する
 (setq recentf-max-saved-items 500)
