@@ -68,7 +68,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (helm-ls-git helm-git-grep helm recentf-ext git-gutter+ ruby-test-mode))))
+    (yasnippet helm-ls-git helm-git-grep helm recentf-ext git-gutter+ ruby-test-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -82,6 +82,10 @@
 (require 'git-gutter+)
 (global-git-gutter+-mode t)
 
+;;; set yasnippet
+(require 'yasnippet)
+(yas-global-mode 1)
+f
 ;;; set recentf-ext
 ;; 最近のファイル500個を保存する
 (setq recentf-max-saved-items 500)
