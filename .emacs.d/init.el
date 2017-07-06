@@ -68,7 +68,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yasnippet helm-ls-git helm-git-grep helm recentf-ext git-gutter+ ruby-test-mode))))
+    (flycheck yasnippet helm-ls-git helm-git-grep helm recentf-ext git-gutter+ ruby-test-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -96,6 +96,10 @@
 (require 'recentf-ext)
 ;; キーバインド
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
+
+;;; flycheck
+(require 'flycheck) 
+(global-flycheck-mode)
 
 ;;; set helm
 (require 'helm-config)
