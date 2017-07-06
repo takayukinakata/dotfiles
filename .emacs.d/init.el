@@ -73,7 +73,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (company flycheck yasnippet helm-ls-git helm-git-grep helm recentf-ext git-gutter+ ruby-test-mode))))
+    (markdown-mode company flycheck yasnippet helm-ls-git helm-git-grep helm recentf-ext git-gutter+ ruby-test-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -82,6 +82,22 @@
  )
 
 ;;; Must write installed packages below!!!
+
+;;; set markdown-mode
+(progn
+ ;; set color in markdown-mode
+ (custom-set-faces
+  '(markdown-header-delimiter-face ((t (:inherit org-mode-line-clock))))
+  '(markdown-header-face-1 ((t (:inherit outline-1 :weight bold))))
+  '(markdown-header-face-2 ((t (:inherit outline-2 :weight bold))))
+  '(markdown-header-face-3 ((t (:inherit outline-3 :weight bold))))
+  '(markdown-header-face-4 ((t (:inherit outline-4 :weight bold))))
+  '(markdown-header-face-5 ((t (:inherit outline-5 :weight bold))))
+  '(markdown-header-face-6 ((t (:inherit outline-6 :weight bold))))
+  '(markdown-pre-face ((t (:inherit org-formula))))
+  '(markdown-list-face ((t (:inherit org-mode-line-clock))))
+ )
+)
 
 ;;; set company
 (require 'company)
