@@ -101,6 +101,8 @@
 (require 'helm-config)
 (helm-mode 1)
 (global-set-key (kbd "C-x c f") 'helm-multi-files)
+(global-set-key (kbd "C-x c r") 'helm-recentf)
+(global-set-key (kbd "C-x c b") 'helm-mini)
 
 ;;; set helm-ls-git
 (require 'helm-ls-git)
