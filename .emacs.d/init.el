@@ -55,6 +55,11 @@
 ;;; Don't inset magic comment in ruby-mode
 (setq ruby-insert-encoding-magic-comment nil)
 
+;;; 対応するペアを自動で入力してくれる(), {}, ||, "", ''
+(electric-pair-mode t)
+(add-to-list 'electric-pair-pairs '(?| . ?|))
+(add-to-list 'electric-pair-pairs '(?' . ?'))
+
 ;;; add other package list
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
