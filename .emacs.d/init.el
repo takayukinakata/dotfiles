@@ -133,7 +133,8 @@
 ;;; set helm
 (require 'helm-config)
 (helm-mode 1)
-(global-set-key (kbd "C-x c f") 'helm-multi-files)
+(global-set-key (kbd "C-x c f") 'helm-find)
+(global-set-key (kbd "C-x c m") 'helm-multi-files)
 (global-set-key (kbd "C-x c r") 'helm-recentf)
 (global-set-key (kbd "C-x c b") 'helm-mini)
 
