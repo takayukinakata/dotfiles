@@ -137,6 +137,7 @@
 (global-set-key (kbd "C-x c m") 'helm-multi-files)
 (global-set-key (kbd "C-x c r") 'helm-recentf)
 (global-set-key (kbd "C-x c b") 'helm-mini)
+(global-set-key (kbd "C-x c o") 'helm-occur)
 
 ;;; set helm-ls-git
 (require 'helm-ls-git)
