@@ -62,6 +62,10 @@
 (add-to-list 'electric-pair-pairs '(?| . ?|))
 (add-to-list 'electric-pair-pairs '(?' . ?'))
 
+;;; set wdired on
+(require 'wdired)
+(define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
+
 ;;; add other package list
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
