@@ -18,7 +18,7 @@
 ;;; インデントにTABを使わないようにする
 (setq-default indent-tabs-mode nil)
 ;;; 現在行に色をつける
-;(global-hl-line-mode 1)
+(global-hl-line-mode 1)
 ;;; ミニバッファ履歴を次回Emacs起動時にも保存する
 (savehist-mode 1)
 ;;; シェルに合わせるため、C-hは後退に割り当てる
