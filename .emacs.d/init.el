@@ -42,6 +42,7 @@
 (global-set-key (kbd "C-x C-b") 'bs-show)
 ;;; set `revert-buffer` to `M-r`
 (global-set-key (kbd "M-r") 'revert-buffer)
+(global-auto-revert-mode 1)
 ;/ keybind C-h to dlete
 (keyboard-translate ?\C-h ?\C-?)
 
