@@ -66,6 +66,9 @@
 (require 'wdired)
 (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
 
+;;; set copy to clipboard
+(setq x-select-enable-clipboard t)
+
 ;;; add other package list
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
