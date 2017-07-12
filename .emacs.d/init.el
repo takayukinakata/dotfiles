@@ -55,6 +55,10 @@
 ;;; Don't make auto-save-list
 (setq auto-save-list-file-prefix nil)
 
+;;; Don't make auto-save-default-file
+;; ex) #text.md#
+(setq auto-save-default nil)
+
 ;;; Don't inset magic comment in ruby-mode
 (setq ruby-insert-encoding-magic-comment nil)
 
