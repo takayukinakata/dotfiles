@@ -169,3 +169,6 @@
 
 ;;; set wgrep
 (require 'wgrep nil t)
+
+;;; set gfm-mode
+(add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
