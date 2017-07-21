@@ -19,3 +19,5 @@
 	fpr = "!f(){ git fetch origin pull/$1/head:$2; git checkout $2; }; f"
 [color]
 	ui = true
+[core]
+        excludesfile = ~/.gitignore_global

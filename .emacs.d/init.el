@@ -87,7 +87,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (helm-ag wgrep yaml-mode markdown-mode company flycheck yasnippet helm-ls-git helm-git-grep helm recentf-ext git-gutter+ ruby-test-mode))))
+    (helm-gtags helm-ag wgrep yaml-mode markdown-mode company flycheck yasnippet helm-ls-git helm-git-grep helm recentf-ext git-gutter+ ruby-test-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -172,3 +172,20 @@
 
 ;;; set gfm-mode
 (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
+
+;;; set helm-gtags
+(add-hook 'helm-gtags-mode-hook
+'(lambda ()
+;;入力されたタグの定義元へジャンプ
+(local-set-key (kbd "M-t") 'helm-gtags-find-tag)
+;;入力タグを参照する場所へジャンプ
+(local-set-key (kbd "M-r") 'helm-gtags-find-rtag)  
+;;入力したシンボルを参照する場所へジャンプ
+(local-set-key (kbd "M-s") 'helm-gtags-find-symbol)
+;;タグ一覧からタグを選択し, その定義元にジャンプする
+(local-set-key (kbd "M-l") 'helm-gtags-select)
+;;ジャンプ前の場所に戻る
+(local-set-key (kbd "C-t") 'helm-gtags-pop-stack)))
+
+(add-hook 'php-mode-hook 'helm-gtags-mode)
+(add-hook 'ruby-mode-hook 'helm-gtags-mode)
