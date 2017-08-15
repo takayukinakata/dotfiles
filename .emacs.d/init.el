@@ -184,5 +184,16 @@
 ;;ジャンプ前の場所に戻る
 (local-set-key (kbd "C-t") 'helm-gtags-pop-stack)))
 
+;;; GNU Global のタグファイル自動更新
+(defun my-c-mode-update-gtags ()
+  (let* ((file (buffer-file-name (current-buffer)))
+     (dir (directory-file-name (file-name-directory file))))
+    (when (executable-find "global")
+      (start-process "gtags-update" nil
+             "global" "-uv"))))
+
+(add-hook 'after-save-hook
+      'my-c-mode-update-gtags)
+
 (add-hook 'php-mode-hook 'helm-gtags-mode)
 (add-hook 'ruby-mode-hook 'helm-gtags-mode)
