@@ -98,6 +98,7 @@
  '(markdown-header-face-5 ((t (:inherit outline-5 :weight bold))))
  '(markdown-header-face-6 ((t (:inherit outline-6 :weight bold))))
  '(markdown-list-face ((t (:inherit org-mode-line-clock))))
+ '(markdown-markup-face ((t (:inherit shadow :foreground "green" :slant normal :weight normal))))
  '(markdown-pre-face ((t (:inherit org-formula)))))
 
 ;;; Must write installed packages below!!!
