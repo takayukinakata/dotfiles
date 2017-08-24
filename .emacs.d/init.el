@@ -84,7 +84,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ac-php php-mode helm-gtags helm-ag wgrep yaml-mode markdown-mode company flycheck yasnippet helm-ls-git helm-git-grep helm recentf-ext git-gutter+ ruby-test-mode))))
+    (web-mode ac-php php-mode helm-gtags helm-ag wgrep yaml-mode markdown-mode company flycheck yasnippet helm-ls-git helm-git-grep helm recentf-ext git-gutter+ ruby-test-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -99,7 +99,8 @@
  '(markdown-header-face-6 ((t (:inherit outline-6 :weight bold))))
  '(markdown-list-face ((t (:inherit org-mode-line-clock))))
  '(markdown-markup-face ((t (:inherit shadow :foreground "green" :slant normal :weight normal))))
- '(markdown-pre-face ((t (:inherit org-formula)))))
+ '(markdown-pre-face ((t (:inherit org-formula))))
+ '(web-mode-html-tag-bracket-face ((t (:foreground "yellow")))))
 
 ;;; Must write installed packages below!!!
 
@@ -204,3 +205,14 @@
 
 (add-hook 'php-mode-hook 'helm-gtags-mode)
 (add-hook 'ruby-mode-hook 'helm-gtags-mode)
+
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+)
+(add-hook 'web-mode-hook  'my-web-mode-hook)
+
