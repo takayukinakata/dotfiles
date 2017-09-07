@@ -219,3 +219,10 @@
 )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
+(add-to-list 'company-backends 'company-go)
+
+(add-hook 'go-mode-hook
+          '(lambda()
+            (setq tab-width 4)
+            (setq c-basic-offset 4)
+            (setq indent-tabs-mode t)))
