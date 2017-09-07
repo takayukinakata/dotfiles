@@ -1,5 +1,6 @@
 export PS1="[\W tnakata]$ "
 export LSCOLORS=gxfxcxdxbxegedabagacad # default: exfxcxdxbxegedabagacad
+export GOPATH=$HOME/dev/go-workspace
 
 # history
 HISTSIZE=5000
