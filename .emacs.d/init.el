@@ -87,7 +87,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (company-go go-mode web-mode ac-php php-mode helm-gtags helm-ag wgrep yaml-mode markdown-mode company flycheck yasnippet helm-ls-git helm-git-grep helm recentf-ext git-gutter+ ruby-test-mode))))
+    (company-c-headers company-go go-mode web-mode ac-php php-mode helm-gtags helm-ag wgrep yaml-mode markdown-mode company flycheck yasnippet helm-ls-git helm-git-grep helm recentf-ext git-gutter+ ruby-test-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -209,6 +209,7 @@
 (add-hook 'php-mode-hook 'helm-gtags-mode)
 (add-hook 'ruby-mode-hook 'helm-gtags-mode)
 (add-hook 'c-mode-hook 'helm-gtags-mode)
+(add-to-list 'company-backends 'company-c-headers)
 
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
