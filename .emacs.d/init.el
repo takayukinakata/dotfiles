@@ -210,6 +210,7 @@
 (add-hook 'ruby-mode-hook 'helm-gtags-mode)
 (add-hook 'c-mode-hook 'helm-gtags-mode)
 (add-to-list 'company-backends 'company-c-headers)
+(add-to-list 'company-backends 'company-gtags)
 
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
