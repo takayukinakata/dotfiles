@@ -227,5 +227,6 @@
 (add-hook 'go-mode-hook
           '(lambda()
             (setq tab-width 4)
+            (add-hook 'before-save-hook 'gofmt-before-save)
             (setq c-basic-offset 4)
             (setq indent-tabs-mode t)))
