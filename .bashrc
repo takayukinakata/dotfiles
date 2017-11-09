@@ -16,3 +16,8 @@ alias vu='vagrant up'
 alias vh='vagrant halt'
 alias vr='vagrant reload'
 alias vs='vagrant ssh'
+
+# docker
+alias d='docker'
+alias dc='docker-compose'
+
