@@ -14,6 +14,7 @@ source ~/.git-completion.bash
 # GO
 export GOPATH=$HOME/dev/go-workspace
 export PATH="$GOPATH/bin:$PATH"
+export PATH="/usr/local/go/bin:$PATH"
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
