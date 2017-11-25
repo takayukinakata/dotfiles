@@ -1,1 +1,0 @@
-/Users/t-nakata/dotfiles/.emacs.d
