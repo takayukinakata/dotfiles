@@ -1,3 +1,8 @@
+;;; init.el --- init.el
+;;; Commentary:
+;;; This is my setting file.
+;;; Code:
+
 ;;; 右から左に読む言語に対応させないことで描画高速化
 (setq-default bidi-display-reordering nil)
 ;;; splash screenを無効にする
@@ -60,10 +65,11 @@
 (setq auto-save-default nil)
 
 ;;; Don't inset magic comment in ruby-mode
-(setq ruby-insert-encoding-magic-comment nil)
+(defvar ruby-insert-encoding-magic-comment nil)
 
 ;;; 対応するペアを自動で入力してくれる(), {}, ||, "", ''
 (electric-pair-mode t)
+(defvar electric-pair-pairs)
 (add-to-list 'electric-pair-pairs '(?| . ?|))
 (add-to-list 'electric-pair-pairs '(?' . ?'))
 
@@ -138,18 +144,19 @@
 (yas-global-mode 1)
 
 ;;; set recentf-ext
+(require 'recentf-ext)
 ;; 最近のファイル500個を保存する
 (setq recentf-max-saved-items 500)
 ;; 最近使ったファイルに加えないファイルを
 ;; 正規表現で指定する
 (setq recentf-exclude
       '("/TAGS$" "/var/tmp/"))
-(require 'recentf-ext)
+
 ;; キーバインド
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
 ;;; flycheck
-(require 'flycheck) 
+(require 'flycheck)
 (global-flycheck-mode)
 
 ;;; set helm
@@ -183,20 +190,21 @@
 
 ;;; set helm-gtags
 (add-hook 'helm-gtags-mode-hook
-'(lambda ()
-;;入力されたタグの定義元へジャンプ
-(local-set-key (kbd "M-t") 'helm-gtags-find-tag)
-;;入力タグを参照する場所へジャンプ
-(local-set-key (kbd "M-r") 'helm-gtags-find-rtag)  
-;;入力したシンボルを参照する場所へジャンプ
-(local-set-key (kbd "M-s") 'helm-gtags-find-symbol)
-;;タグ一覧からタグを選択し, その定義元にジャンプする
-(local-set-key (kbd "M-l") 'helm-gtags-select)
-;;ジャンプ前の場所に戻る
-(local-set-key (kbd "C-t") 'helm-gtags-pop-stack)))
+          '(lambda ()
+             ;;入力されたタグの定義元へジャンプ
+             (local-set-key (kbd "M-t") 'helm-gtags-find-tag)
+             ;;入力タグを参照する場所へジャンプ
+             (local-set-key (kbd "M-r") 'helm-gtags-find-rtag)
+             ;;入力したシンボルを参照する場所へジャンプ
+             (local-set-key (kbd "M-s") 'helm-gtags-find-symbol)
+             ;;タグ一覧からタグを選択し, その定義元にジャンプする
+             (local-set-key (kbd "M-l") 'helm-gtags-select)
+             ;;ジャンプ前の場所に戻る
+             (local-set-key (kbd "C-t") 'helm-gtags-pop-stack)))
 
 ;;; GNU Global のタグファイル自動更新
 (defun my-c-mode-update-gtags ()
+  "GNU Global auto update for tag files."
   (let* ((file (buffer-file-name (current-buffer)))
      (dir (directory-file-name (file-name-directory file))))
     (when (executable-find "global")
@@ -225,11 +233,13 @@
 (add-to-list 'company-backends 'company-go)
 
 (add-to-list 'load-path (concat (getenv "GOPATH")  "/src/github.com/golang/lint/misc/emacs"))
-(require 'golint)
 
 (add-hook 'go-mode-hook
-          '(lambda()
+          (lambda()
             (setq tab-width 4)
             (add-hook 'before-save-hook 'gofmt-before-save)
-            (setq c-basic-offset 4)
-            (setq indent-tabs-mode t)))
+            (defvar c-basic-offset 4)
+            (setq indent-tabs-mode t)
+            (require 'golint)))
+
+;;; init.el ends here
