@@ -70,7 +70,6 @@
 ;;; 対応するペアを自動で入力してくれる(), {}, ||, "", ''
 (electric-pair-mode t)
 (defvar electric-pair-pairs)
-(add-to-list 'electric-pair-pairs '(?| . ?|))
 (add-to-list 'electric-pair-pairs '(?' . ?'))
 
 ;;; go get で入れたツール郡もEmacsから使いたい
@@ -215,6 +214,9 @@
       'my-c-mode-update-gtags)
 
 (add-hook 'php-mode-hook 'helm-gtags-mode)
+(add-hook 'ruby-mode-hook
+          (lambda()
+            (add-to-list 'electric-pair-pairs '(?| . ?|))))
 (add-hook 'ruby-mode-hook 'helm-gtags-mode)
 (add-hook 'c-mode-hook 'helm-gtags-mode)
 (add-to-list 'company-backends 'company-c-headers)
