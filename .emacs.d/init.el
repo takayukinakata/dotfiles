@@ -242,6 +242,7 @@
             (add-hook 'before-save-hook 'gofmt-before-save)
             (defvar c-basic-offset 4)
             (setq indent-tabs-mode t)
+            (helm-gtags-mode)
             (require 'golint)))
 
 ;;; init.el ends here
