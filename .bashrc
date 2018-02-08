@@ -8,6 +8,9 @@ alias grep='grep --color=auto'
 alias g='git'
 alias gbd="git branch --merged | grep -v '*' | xargs git branch -d"
 
+# gtags
+alias gtagsupd="gtags -v -i --gtagslabel=pygments --debug --explain"
+
 # emacs
 alias e='emacs'
 
