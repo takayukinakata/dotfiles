@@ -28,6 +28,7 @@
 (savehist-mode 1)
 ;;; シェルに合わせるため、C-hは後退に割り当てる
 (global-set-key (kbd "C-h") 'delete-backward-char)
+(global-set-key (kbd "C-x C-h") 'help)
 ;;; モードラインに時刻を表示する
 (display-time)
 ;;; 行番号・桁番号を表示する
@@ -48,8 +49,6 @@
 ;;; set `revert-buffer` to `M-r`
 (global-set-key (kbd "M-r") 'revert-buffer)
 (global-auto-revert-mode 1)
-;/ keybind C-h to dlete
-(keyboard-translate ?\C-h ?\C-?)
 
 ; Highlight parenthesis
 (show-paren-mode t)
