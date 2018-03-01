@@ -20,6 +20,10 @@ export PATH="/usr/local/go/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# goenv
+export PATH="$HOME/.goenv/bin:$PATH"
+eval "$(goenv init -)"
+
 if [ -f ~/.bashrc ] ; then
 . ~/.bashrc
 fi
