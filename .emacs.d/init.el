@@ -244,4 +244,6 @@
             (helm-gtags-mode)
             (require 'golint)))
 
+(global-set-key (kbd "<f5>") 'quickrun)
+
 ;;; init.el ends here
