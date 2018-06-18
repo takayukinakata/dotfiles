@@ -91,7 +91,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (open-junk-file flycheck-kotlin kotlin-mode geiser quickrun racket-mode protobuf-mode haskell-mode company-c-headers company-go go-mode web-mode ac-php php-mode helm-gtags helm-ag wgrep yaml-mode markdown-mode company flycheck yasnippet helm-ls-git helm-git-grep helm recentf-ext git-gutter+ ruby-test-mode))))
+    (go-autocomplete open-junk-file flycheck-kotlin kotlin-mode geiser quickrun racket-mode protobuf-mode haskell-mode company-c-headers company-go go-mode web-mode ac-php php-mode helm-gtags helm-ag wgrep yaml-mode markdown-mode company flycheck yasnippet helm-ls-git helm-git-grep helm recentf-ext git-gutter+ ruby-test-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -231,9 +231,8 @@
 )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
-(add-to-list 'company-backends 'company-go)
-
 (add-to-list 'load-path (concat (getenv "GOPATH")  "/src/github.com/golang/lint/misc/emacs"))
+(add-to-list 'load-path (concat (getenv "GOPATH")  "/src/github.com/nsf/gocode/emacs/"))
 
 (add-hook 'go-mode-hook
           (lambda()
@@ -242,6 +241,9 @@
             (defvar c-basic-offset 4)
             (setq indent-tabs-mode t)
             (helm-gtags-mode)
+            (require 'go-autocomplete)
+            (require 'auto-complete-config)
+            (ac-config-default)
             (require 'golint)))
 
 (global-set-key (kbd "<f5>") 'quickrun)
