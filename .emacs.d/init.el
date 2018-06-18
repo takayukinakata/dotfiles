@@ -241,9 +241,6 @@
             (defvar c-basic-offset 4)
             (setq indent-tabs-mode t)
             (helm-gtags-mode)
-            (require 'go-autocomplete)
-            (require 'auto-complete-config)
-            (ac-config-default)
             (require 'golint)))
 
 (global-set-key (kbd "<f5>") 'quickrun)
