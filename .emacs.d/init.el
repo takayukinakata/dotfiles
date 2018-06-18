@@ -91,7 +91,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (go-autocomplete open-junk-file flycheck-kotlin kotlin-mode geiser quickrun racket-mode protobuf-mode haskell-mode company-c-headers company-go go-mode web-mode ac-php php-mode helm-gtags helm-ag wgrep yaml-mode markdown-mode company flycheck yasnippet helm-ls-git helm-git-grep helm recentf-ext git-gutter+ ruby-test-mode))))
+    (open-junk-file flycheck-kotlin kotlin-mode geiser quickrun racket-mode protobuf-mode haskell-mode company-c-headers company-go go-mode web-mode ac-php php-mode helm-gtags helm-ag wgrep yaml-mode markdown-mode company flycheck yasnippet helm-ls-git helm-git-grep helm recentf-ext git-gutter+ ruby-test-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -240,7 +240,28 @@
             (add-hook 'before-save-hook 'gofmt-before-save)
             (defvar c-basic-offset 4)
             (setq indent-tabs-mode t)
+            (set (make-local-variable 'company-backends) '(company-go))
+            (company-mode)
             (helm-gtags-mode)
+            (setq company-tooltip-limit 20)                      ; bigger popup window
+            (setq company-idle-delay .3)                         ; decrease delay before autocompletion (point)opup shows
+            (setq company-echo-delay 0)                          ; remove annoying blinking
+            (setq company-begin-commands '(self-insert-command)) ; start autocompletion only after typing
+            (custom-set-faces
+             '(company-preview
+               ((t (:foreground "darkgray" :underline t))))
+             '(company-preview-common
+               ((t (:inherit company-preview))))
+             '(company-tooltip
+               ((t (:background "lightgray" :foreground "black"))))
+             '(company-tooltip-selection
+               ((t (:background "steelblue" :foreground "white"))))
+             '(company-tooltip-common
+               ((((type x)) (:inherit company-tooltip :weight bold))
+                (t (:inherit company-tooltip))))
+             '(company-tooltip-common-selection
+               ((((type x)) (:inherit company-tooltip-selection :weight bold))
+                (t (:inherit company-tooltip-selection)))))
             (require 'golint)))
 
 (global-set-key (kbd "<f5>") 'quickrun)
