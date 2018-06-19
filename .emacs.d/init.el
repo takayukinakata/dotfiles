@@ -28,6 +28,7 @@
 (savehist-mode 1)
 ;;; シェルに合わせるため、C-hは後退に割り当てる
 (global-set-key (kbd "C-h") 'delete-backward-char)
+(define-key key-translation-map (kbd "C-h") (kbd "<DEL>"))
 (global-set-key (kbd "C-x C-h") 'help)
 ;;; モードラインに時刻を表示する
 (display-time)
