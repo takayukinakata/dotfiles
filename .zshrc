@@ -1,6 +1,19 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# GO
+export GOPATH=$HOME/dev/go-workspace
+export PATH="$GOPATH/bin:$PATH"
+export PATH="/usr/local/go/bin:$PATH"
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - zsh)"
+# goenv
+export PATH="$HOME/.goenv/bin:$PATH"
+eval "$(goenv init - zsh)"
+
+source ~/.zshrc
+
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/t-nakata/.oh-my-zsh"
 
@@ -65,6 +78,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+autoload -U compinit; compinit
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -92,3 +106,23 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# ls
+alias ll='ls -lahG'
+# grep
+alias grep='grep --color=auto'
+# git
+alias g='git'
+alias gbd="git branch --merged | grep -v '*' | xargs git branch -d"
+# gtags
+alias gtagsupd="gtags -v -i --gtagslabel=pygments --debug --explain"
+# emacs
+alias e='emacs'
+# vagrant
+alias vu='vagrant up'
+alias vh='vagrant halt'
+alias vr='vagrant reload'
+alias vs='vagrant ssh'
+# docker
+alias d='docker'
+alias dc='docker-compose'
