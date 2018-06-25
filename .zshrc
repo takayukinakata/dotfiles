@@ -12,8 +12,6 @@ eval "$(rbenv init - zsh)"
 export PATH="$HOME/.goenv/bin:$PATH"
 eval "$(goenv init - zsh)"
 
-source ~/.zshrc
-
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/t-nakata/.oh-my-zsh"
 
