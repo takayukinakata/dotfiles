@@ -129,3 +129,6 @@ alias vs='vagrant ssh'
 # docker
 alias d='docker'
 alias dc='docker-compose'
+
+# Launch tmux
+[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
