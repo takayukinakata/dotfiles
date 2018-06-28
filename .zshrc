@@ -129,6 +129,8 @@ alias vs='vagrant ssh'
 # docker
 alias d='docker'
 alias dc='docker-compose'
+# tmux
+alias tcopy='tmux save-buffer - | reattach-to-user-namespace pbcopy'
 
 # Launch tmux
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
