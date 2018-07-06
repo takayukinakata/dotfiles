@@ -20,6 +20,10 @@
 (require 'saveplace)
 (setq-default save-place t)
 (setq save-place-file (concat user-emacs-directory "places"))
+
+(defvar display-time-string-forms)
+(setq display-time-string-forms
+  '((format "%s/%s/%s(%s) %s:%s" year month day dayname 24-hours minutes)))
 ;;; インデントにTABを使わないようにする
 (setq-default indent-tabs-mode nil)
 ;;; 現在行に色をつける
