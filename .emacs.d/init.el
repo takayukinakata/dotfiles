@@ -20,10 +20,11 @@
 (require 'saveplace)
 (setq-default save-place t)
 (setq save-place-file (concat user-emacs-directory "places"))
-
-(defvar display-time-string-forms)
-(setq display-time-string-forms
-  '((format "%s/%s/%s(%s) %s:%s" year month day dayname 24-hours minutes)))
+;;; モードラインに時刻を表示する
+;; (display-time nil)
+;; (defvar display-time-string-forms)
+;; (setq display-time-string-forms
+;;   '((format "%s/%s/%s(%s) %s:%s" year month day dayname 24-hours minutes)))
 ;;; インデントにTABを使わないようにする
 (setq-default indent-tabs-mode nil)
 ;;; 現在行に色をつける
@@ -34,8 +35,6 @@
 (global-set-key (kbd "C-h") 'delete-backward-char)
 (define-key key-translation-map (kbd "C-h") (kbd "<DEL>"))
 (global-set-key (kbd "C-x C-h") 'help)
-;;; モードラインに時刻を表示する
-(display-time)
 ;;; 行番号・桁番号を表示する
 (line-number-mode 1)
 (column-number-mode 1)
