@@ -5,8 +5,9 @@
 export GOPATH="$HOME/dev/go"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
-# gvm
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+# goenv
+export PATH="$HOME/.goenv/bin:$PATH"
+eval "$(goenv init - zsh)"
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
