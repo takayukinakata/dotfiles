@@ -11,6 +11,8 @@ eval "$(goenv init - zsh)"
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
+# nodebrew
+export PATH="$HOME/.nodebrew/current/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
