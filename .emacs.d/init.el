@@ -232,6 +232,9 @@
   "Hooks for Web mode."
   (setq web-mode-markup-indent-offset 2)
   (setq web-mode-css-indent-offset 2)
+  (setq web-mode-enable-auto-closing t)
+  (setq web-mode-auto-close-style 2)
+  (setq web-mode-tag-auto-close-style 2)
 )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
