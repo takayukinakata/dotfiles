@@ -95,7 +95,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (typescript-mode haml-mode open-junk-file flycheck-kotlin kotlin-mode geiser quickrun racket-mode protobuf-mode haskell-mode company-c-headers company-go go-mode web-mode ac-php php-mode helm-gtags helm-ag wgrep yaml-mode markdown-mode company flycheck yasnippet helm-ls-git helm-git-grep helm recentf-ext git-gutter+ ruby-test-mode))))
+    (vue-html-mode vue-mode typescript-mode haml-mode open-junk-file flycheck-kotlin kotlin-mode geiser quickrun racket-mode protobuf-mode haskell-mode company-c-headers company-go go-mode web-mode ac-php php-mode helm-gtags helm-ag wgrep yaml-mode markdown-mode company flycheck yasnippet helm-ls-git helm-git-grep helm recentf-ext git-gutter+ ruby-test-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
