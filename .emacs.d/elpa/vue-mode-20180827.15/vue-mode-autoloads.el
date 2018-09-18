@@ -1,10 +1,14 @@
 ;;; vue-mode-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
+
+(add-to-list 'load-path (directory-file-name
+                         (or (file-name-directory #$) (car load-path))))
+
 
-;;;### (autoloads nil "vue-mode" "vue-mode.el" (23454 23774 0 0))
-;;; Generated autoloads from vue-mode.el
+;;;### (autoloads nil "vue-mode" "../../../../.emacs.d/elpa/vue-mode-20180827.15/vue-mode.el"
+;;;;;;  "c81cac3711dbb7577525741a3345c124")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/vue-mode-20180827.15/vue-mode.el
 
 (autoload 'vue-mode-edit-all-indirect "vue-mode" "\
 Open all subsections with `edit-indirect-mode' in seperate windows.
@@ -21,6 +25,20 @@ open.
 (setq mmm-global-mode 'maybe)
 
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode))
+
+;;;### (autoloads "actual autoloads are elsewhere" "vue-mode" "../../../../.emacs.d/elpa/vue-mode-20180827.15/vue-mode.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/vue-mode-20180827.15/vue-mode.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "vue-mode" '("vue-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/vue-mode-20180827.15/vue-mode-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/vue-mode-20180827.15/vue-mode.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 
@@ -28,5 +46,6 @@ open.
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
+;; coding: utf-8
 ;; End:
 ;;; vue-mode-autoloads.el ends here
