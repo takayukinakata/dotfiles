@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# llvm
+export PATH="/usr/local/Cellar/llvm/7.0.0/bin:$PATH"
 # GO
 export GOPATH="$HOME/dev/go"
 export PATH="$GOPATH/bin:$PATH"
