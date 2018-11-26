@@ -16,6 +16,9 @@ eval "$(rbenv init - zsh)"
 # nodebrew
 export PATH="$HOME/.nodebrew/current/bin:$PATH"
 
+# dotfiles path
+export DOTFILES_DIR="$HOME/dotfiles"
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -120,7 +123,7 @@ zstyle ':chpwd:*' recent-dirs-pushd true
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ./alias.zsh
+source $DOTFILES_DIR/alias.zsh
 
 # Launch tmux
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
