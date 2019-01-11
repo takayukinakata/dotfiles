@@ -7,9 +7,6 @@ export PATH="/usr/local/Cellar/llvm/7.0.0/bin:$PATH"
 export GOPATH="$HOME/dev/go"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
-# goenv
-export PATH="$HOME/.goenv/bin:$PATH"
-eval "$(goenv init - zsh)"
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
