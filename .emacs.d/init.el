@@ -247,6 +247,10 @@
             (setq indent-tabs-mode nil)
             (setq js2-strict-missing-semi-warning nil)
             (setq js-indent-level 2)))
+;; coffeescript
+(add-hook 'coffee-mode-hook
+          (lambda()
+            (setq coffee-tab-width 2)))
 
 
 (add-to-list 'load-path (concat (getenv "GOPATH")  "/src/github.com/golang/lint/misc/emacs"))
