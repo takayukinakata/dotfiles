@@ -122,6 +122,27 @@ zstyle ':chpwd:*' recent-dirs-pushd true
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source $DOTFILES_DIR/alias.zsh
 
+function select-history() {
+  BUFFER=$(history -n -r 1 | fzf --no-sort --query "$LBUFFER")
+  CURSOR=$#BUFFER
+}
+zle -N select-history
+bindkey '^x^r' select-history
+
+function fzf-find-file() {
+    if git rev-parse 2> /dev/null; then
+        source_files=$(git ls-files)
+    else
+        source_files=$(find . -type f)
+    fi
+    selected_files=$(echo $source_files | fzf --prompt "[find file]")
+
+    BUFFER="${BUFFER}`echo $selected_files | tr '\n' ' '`"
+    CURSOR=$#BUFFER
+}
+zle -N fzf-find-file
+bindkey '^x^f' fzf-find-file
+
 # Launch tmux
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
