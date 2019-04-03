@@ -241,6 +241,10 @@
           (lambda()
             (setq coffee-tab-width 2)))
 
+;; python
+(setq python-shell-interpreter "python3")
+(setq python-shell-interpreter-args "-m IPython --simple-prompt -i")
+
 
 (add-to-list 'load-path (concat (getenv "GOPATH")  "/src/github.com/golang/lint/misc/emacs"))
 (add-to-list 'load-path (concat (getenv "GOPATH")  "/src/github.com/nsf/gocode/emacs/"))
