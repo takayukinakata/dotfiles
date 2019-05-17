@@ -75,9 +75,6 @@
 (defvar electric-pair-pairs)
 (add-to-list 'electric-pair-pairs '(?' . ?'))
 
-;;; go get で入れたツール郡もEmacsから使いたい
-(add-to-list 'exec-path (expand-file-name "~/dev/go-workspace/bin"))
-
 ;;; set wdired on
 (require 'wdired)
 (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
@@ -95,7 +92,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (flycheck-rust racer rust-mode rjsx-mode slim-mode coffee-mode vue-mode vue-html-mode typescript-mode haml-mode open-junk-file flycheck-kotlin kotlin-mode geiser quickrun racket-mode protobuf-mode haskell-mode company-c-headers company-go go-mode web-mode ac-php php-mode helm-gtags helm-ag wgrep yaml-mode markdown-mode company flycheck yasnippet helm-ls-git helm-git-grep helm recentf-ext git-gutter+ ruby-test-mode))))
+    (cargo flycheck-rust racer rust-mode rjsx-mode slim-mode coffee-mode vue-mode vue-html-mode typescript-mode haml-mode open-junk-file flycheck-kotlin kotlin-mode geiser quickrun racket-mode protobuf-mode haskell-mode company-c-headers company-go go-mode web-mode ac-php php-mode helm-gtags helm-ag wgrep yaml-mode markdown-mode company flycheck yasnippet helm-ls-git helm-git-grep helm recentf-ext git-gutter+ ruby-test-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -245,10 +242,10 @@
 (setq python-shell-interpreter "python3")
 (setq python-shell-interpreter-args "-m IPython --simple-prompt -i")
 
-
+;; go
+(add-to-list 'exec-path (expand-file-name "~/dev/go-workspace/bin")) ; go get で入れたツール郡もEmacsから使いたい
 (add-to-list 'load-path (concat (getenv "GOPATH")  "/src/github.com/golang/lint/misc/emacs"))
 (add-to-list 'load-path (concat (getenv "GOPATH")  "/src/github.com/nsf/gocode/emacs/"))
-
 (add-hook 'go-mode-hook
           (lambda()
             (setq tab-width 4)
@@ -277,5 +274,9 @@
                ((((type x)) (:inherit company-tooltip-selection :weight bold))
                 (t (:inherit company-tooltip-selection)))))
             (require 'golint)))
+
+;; rust
+(add-to-list 'exec-path (expand-file-name "~/.cargo/bin/"))
+(setq rust-format-on-save t)
 
 ;;; init.el ends here
