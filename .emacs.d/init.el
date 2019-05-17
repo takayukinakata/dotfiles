@@ -279,7 +279,10 @@
 (add-to-list 'exec-path (expand-file-name "~/.cargo/bin/"))
 (setq rust-format-on-save t)
 (add-hook 'rust-mode-hook 'cargo-minor-mode)
+(add-hook 'rust-mode-hook #'racer-mode)
+(add-hook 'racer-mode-hook #'eldoc-mode)
 (with-eval-after-load 'rust-mode
   (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
+(add-hook 'racer-mode-hook #'company-mode)
 
 ;;; init.el ends here
