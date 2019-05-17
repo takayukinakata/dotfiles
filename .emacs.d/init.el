@@ -278,5 +278,8 @@
 ;; rust
 (add-to-list 'exec-path (expand-file-name "~/.cargo/bin/"))
 (setq rust-format-on-save t)
+(add-hook 'rust-mode-hook 'cargo-minor-mode)
+(with-eval-after-load 'rust-mode
+  (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
 
 ;;; init.el ends here
