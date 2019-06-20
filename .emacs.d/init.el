@@ -48,8 +48,6 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-; set `bs-show` to default buffer list
-(global-set-key (kbd "C-x C-b") 'bs-show)
 ;;; set `revert-buffer` to `M-r`
 (global-set-key (kbd "M-r") 'revert-buffer)
 (global-auto-revert-mode 1)
@@ -151,9 +149,6 @@
 (setq recentf-exclude
       '("/TAGS$" "/var/tmp/"))
 
-;; キーバインド
-(global-set-key (kbd "C-x C-r") 'recentf-open-files)
-
 ;;; flycheck
 (require 'flycheck)
 (global-flycheck-mode)
@@ -166,6 +161,7 @@
 (global-set-key (kbd "C-x c r") 'helm-recentf)
 (global-set-key (kbd "C-x c b") 'helm-mini)
 (global-set-key (kbd "C-x c o") 'helm-occur)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
 
 ;;; set helm-ls-git
 (require 'helm-ls-git)
