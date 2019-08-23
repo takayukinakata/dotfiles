@@ -52,6 +52,9 @@
 (global-set-key (kbd "M-r") 'revert-buffer)
 (global-auto-revert-mode 1)
 
+;;; helm-git-grepで表示候補数をdefaultの300以上にする
+(setq helm-git-grep-candidate-number-limit 1500)
+
 ; Highlight parenthesis
 (show-paren-mode t)
 
