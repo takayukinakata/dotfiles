@@ -12,7 +12,7 @@
 	a = add -A
 	c = commit -m
 	ch = checkout
-	l = log -p --decorate
+	l = log -p --stat --abbrev-commit --decorate --topo-order
 	lo = log --oneline --graph --decorate
 	d = diff
 	r = reset
