@@ -87,6 +87,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+fpath+=~/.zfunc
 autoload -U compinit; compinit
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
