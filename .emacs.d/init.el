@@ -292,4 +292,9 @@
   (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
 (add-hook 'racer-mode-hook #'company-mode)
 
+(setq nand2tetris-core-base-dir "~/workspace/nand2tetris")
+(add-to-list 'auto-mode-alist '("\\.hdl?\\'" . nand2tetris-mode))
+(add-to-list 'auto-mode-alist '("\\.tst?\\'" . nand2tetris-mode))
+(add-to-list 'auto-mode-alist '("\\.cmp?\\'" . nand2tetris-mode))
+
 ;;; init.el ends here
