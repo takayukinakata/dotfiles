@@ -1,0 +1,52 @@
+# -*- mode: snippet -*-
+# name: unionfind
+# key: unionfind
+# --
+struct UnionFind {
+    par: Vec<usize>,
+    rank: Vec<usize>,
+}
+
+impl UnionFind {
+    fn new(n: usize) -> UnionFind {
+        let mut par = vec![0; n];
+        for i in 0..n {
+            par[i] = i;
+        }
+        let rank = vec![0; n];
+        UnionFind {
+            par: par,
+            rank: rank,
+        }
+    }
+
+    fn root(&self, i: usize) -> usize {
+        if self.par[i] == i {
+            i
+        } else {
+            self.root(self.par[i])
+        }
+    }
+
+    fn same(&self, x: usize, y: usize) -> bool {
+        self.root(x) == self.root(y)
+    }
+
+    fn unite(&mut self, x: usize, y: usize) {
+        let x = self.root(x);
+        let y = self.root(y);
+
+        if x == y {
+            return
+        }
+
+        if self.rank[x] < self.rank[y] {
+            self.par[x] = y;
+        } else {
+            self.par[y] = x;
+            if self.rank[x] == self.rank[y] {
+                self.rank[x] += 1;
+            }
+        }
+    }
+}

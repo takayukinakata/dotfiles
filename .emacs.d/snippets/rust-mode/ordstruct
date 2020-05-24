@@ -1,0 +1,31 @@
+# -*- mode: snippet -*-
+# name: ordstruct
+# key: ordstruct
+# --
+
+use std::cmp::Ordering;
+
+struct Foo {
+    a: i32,
+    b: i32,
+}
+
+impl PartialOrd for Foo {
+    fn partial_cmp(&self, other: &Foo) -> Option<Ordering> {
+        Some(self.cmp(other))
+    }
+}
+
+impl Ord for Foo {
+    fn cmp(&self, other: &Foo) -> Ordering {
+        other.a.cmp(&self.a)
+    }
+}
+
+impl PartialEq for Foo {
+    fn eq(&self, other: &Foo) -> bool {
+        self.a == other.a
+    }
+}
+
+impl Eq for Foo {}
