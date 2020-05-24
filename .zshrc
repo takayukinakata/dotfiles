@@ -14,6 +14,8 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
 # nodebrew
 export PATH="$HOME/.nodebrew/current/bin:$PATH"
+# RISC-V compiler toolchain
+export PATH="/usr/local/opt/riscv-gnu-toolchain/bin:$PATH"
 
 # dotfiles path
 export DOTFILES_DIR="$HOME/dotfiles"
