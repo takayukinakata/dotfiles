@@ -24,3 +24,5 @@ alias dll='docker container ls'
 alias dc='docker-compose'
 # tmux
 alias tcopy='tmux save-buffer - | reattach-to-user-namespace pbcopy'
+# cargo atcoder
+alias ca='cargo atcoder'
