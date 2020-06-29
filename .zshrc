@@ -9,6 +9,7 @@ export PATH="$GOPATH/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src" # for racer
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
